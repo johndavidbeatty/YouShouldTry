@@ -1,0 +1,143 @@
+.login {
+  background-image: url(/images/dinner-party.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #888;
+  text-align: center;
+  color: aquamarine;
+  text-shadow:
+  -1px -1px 0 #333,
+  1px -1px 0 #333,
+  -1px 1px 0 #333,
+  1px 1px 0 #333;
+}
+.index-body {
+  background-image: url(/images/checkerboard.jpg);
+  height: 100%;
+  width: 100%;
+}
+.card {
+  color: rgb(36, 134, 163);
+  background-color: black; 
+}
+ #header {
+   height: 300px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-image: url(/images/diner.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+   background-color: #888;
+   background-blend-mode: multiply;
+ }
+ #header .home-content {
+  padding: 20px;
+  /* background-color: #fff; */
+  opacity: none;
+  background-color: none;
+  text-shadow: 1px 1px 2px rgb(4, 61, 77);
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(36, 134, 163);
+  /* change the font color */
+  -webkit-animation-name: title;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 6s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: title;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.navbar {
+background-color: rgb(36, 134, 163);
+font-family: 'Lobster', cursive;
+font-size: 1.5em;
+font-weight: bold;
+color: rgb(36, 134, 163);
+}
+.nav-link {
+  background-color:transparent;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  color: black;
+  }
+  .newrev {
+    font-weight: bold;
+  }
+  input{
+    background-color:black;
+    border-color: rgb(36, 134, 163);
+    color:  rgb(36, 134, 163);
+  }
+  .item {
+    font-family: 'Lobster', cursive;
+    font-size: 1em;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .card-header {
+    padding-top: 4px;
+    padding-bottom: 3px; 
+    padding-left: 5px;
+
+  }
+  .author {
+    font-family: 'Lobster', cursive;
+  }
+  .newrec {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  #newitem {
+    font-family: 'Lobster', cursive; 
+    background-image: url(/images/checkerboard.jpg);
+    /* background-repeat: no-repeat; */
+    background-position: center center;
+    background-size: cover; 
+    color:  rgb(36, 134, 163);
+  }
+  img {
+    margin-left:10px;
+  }
+
+  .commentBut {
+    border-color: rgb(36, 134, 163);
+    background-color:black;
+    color:rgb(36, 134, 163);
+    border-radius: 7px;
+    margin-bottom: 8px;
+  }
+  .revsub {
+    border-color: rgb(36, 134, 163);
+    background-color:black;
+    color:rgb(36, 134, 163);
+    border-radius: 7px;
+    padding:3px;
+    margin-left:8px;
+  }
+  .card-body {
+    padding-top:.5rem;
+  }
+  b {
+    font-weight: 600;
+  }
+.oncheck {
+color:whitesmoke;
+text-shadow: 2px 2px black;
+}
+.navbar {
+  height:65px;
+}

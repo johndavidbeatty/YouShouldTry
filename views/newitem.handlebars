@@ -1,0 +1,41 @@
+<div id="newitem">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <br>
+        <br>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="item-text">New Recommendation</label>
+            <input type="text" id="item-text" class="form-control" aria-describedby="item-text" placeholder="You should try this pace...">
+          </div>
+          <div class="form-group hidden">
+            <label for="item-note">Note</label>
+            <textarea class="form-control" id="item-note" aria-describedby="item-note" placeholder="and try this when you get there"></textarea>
+              <select class="form-control" id="category">
+                <option selected>Category...</option>
+                {{#each cats}}
+                <option value={{this.id}}>{{this.name}}</option>
+                {{/each}}
+              </select>
+
+
+
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW4oqk_YoWGWV3Fp0MrNcyg_hhDcTjus8&libraries=places"></script>
+<script src="/js/index.js"></script>

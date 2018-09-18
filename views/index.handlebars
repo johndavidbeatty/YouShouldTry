@@ -1,0 +1,118 @@
+<div id="header">
+   <div class="home-content text-center">
+     <h1>Food With Friends <br> The Food We Eat!
+     </h1>
+   </div>
+ </div>
+<nav class="navbar navbar-expand-sm">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  {{!-- dropdown bar with categories --}}
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{#each cats}}
+          <a class="dropdown-item" href="/home/{{this.id}}">{{this.name}}</a>
+          {{/each}}
+          <a class="dropdown-item" href="/home/">All</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/invite">Invite Friend</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/newcategory">New Category</a>
+          {{!-- Header when a category is selected --}}
+        </div>
+      </li>
+      <h3>{{msg}}</h3>
+    </ul>
+  </div>
+</nav>
+<body class="index-body">
+{{!-- List of items/recommendations that are collapsible --}}
+<div class="accordion" id="accordionExample">
+  {{#each items}}
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+      <a class="btn item" data-toggle="collapse" data-target="#collapse{{this.id}}"><img src="/images/drop.png"></a> 
+        <a class="btn item" data-toggle="collapse" data-target="#collapse{{this.id}}" aria-expanded="false" aria-controls="collapseOne">
+          {{this.text}}
+        </a>
+        <a class="small author"> -{{this.Author.name}}</a>
+       <a href={{this.googleMap}} target="_blank"><img src="/images/map.png" title='open map' alt='map'></a>  
+              {{#if this.yelpURL}}<a href={{this.yelpURL}} target="_blank"><img src="/images/yelp.png" title='open yelp page' alt='yelp'></a>{{/if}}
+       
+       </h5> 
+    </div>
+    {{!-- Collapside section with reviews/notes --}}
+    <div id="collapse{{this.id}}" class="collapse hide" aria-labelledby="headingOne">
+      <div class="card-body">
+        <a>>> <b>Category: </b>{{this.Category.name}}</a><br>
+        <ul><li>{{this.Author.name}}'s initial note: {{this.note}}</a></li></ul>
+        <a>>> <b>Comments:</a></b>
+        <ul>
+          {{#each this.Reviews}}
+          <li>
+            <a class="comment">{{comment}}</a><a class="author">. -{{Author.name}}</a>
+          </li>
+          {{/each}}
+        </ul>
+        <button class="commentBut" data-toggle="collapse" data-target="#butcollapse{{this.id}}" aria-expanded="false" aria-controls="butcollapseOne">
+          Add Comment
+        </button>
+        <div id="butcollapse{{this.id}}" class="collapse hide" aria-labelledby="butheadingOne">
+        <form class="form-inline">
+          <div class="form-group">
+              <input id="comment{{this.id}}" placeholder="I think....."></input>
+            </div>
+            <button type="submit" data-id="{{this.id}}" class="btn btn-primary revsub">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
+<div class="card">
+  <div class="card-header" id="footer">
+    <h5 class="mb-0">
+      <a class="btn newrec" data-toggle="collapse" data-target="#revDrop" aria-expanded="false" aria-controls="collapseOne">
+        Add New Recommendation
+      </a>
+    </h5>
+    <div id="revDrop" class="collapse hide" aria-labelledby="butheadingOne">
+      <form class="form">
+        <div class="form-group">
+          <input type="text" id="item-text" class="form-control" aria-describedby="item-text" placeholder="Enter recommendation here">
+          <textarea class="form-control" id="item-note" aria-describedby="item-note" placeholder="Enter your notes here"></textarea>
+          <select class="form-control" id="category">
+            <option selected disabled>Category...</option>
+            {{#each cats}}
+            <option value={{this.id}}>{{this.name}}</option>
+            {{/each}}
+          </select>
+          <button id="submit" class="btn btn-primary float-left">Submit</button>
+      </form>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW4oqk_YoWGWV3Fp0MrNcyg_hhDcTjus8&libraries=places"></script>
+<script src="/js/index.js"></script>

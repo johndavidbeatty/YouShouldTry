@@ -1,0 +1,44 @@
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+
+
+
+        <h3>You Should Try:</h3>
+        <ul id="item-list">
+          {{#each items}}
+          <li data-id="{{this.id}}">
+
+          <b> {{this.id}}. </b><b>{{this.text}}</b><a>. -{{this.Author.name}}</a>
+
+
+          </li>
+          {{/each}}
+        </ul>
+        <br>
+        <br>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+          <div class="form-group hidden">
+            <label for="item-note">Comment</label>
+            <textarea class="form-control" id="review" aria-describedby="review" placeholder="here are my thoughts"></textarea>
+ 						<div class="form-group">
+							<label for="category">Enter Target:</label>
+							<input type="number" id="item-number" class="form-control" aria-describedby="item-number" placeholder="Item # here">
+						</div>
+
+
+
+          <button id="revsubmit" class="btn btn-primary float-right">Submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW4oqk_YoWGWV3Fp0MrNcyg_hhDcTjus8&libraries=places"></script>
+<script src="/js/index.js"></script>

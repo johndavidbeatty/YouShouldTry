@@ -1,0 +1,19 @@
+<div class="login">
+<h1>Login</h1>
+
+<form class="login-form" action="/api/login" method="Post">
+    <label>Email</label>
+    <input type="text" name="email"  value={{email}}>
+    <label>Password</label>
+    <input type="text" name="password">
+    <button>Submit</button>
+</form>
+
+<p>{{errorMessage}}</p>
+
+<form action="/createAccount">
+    <button>Don't have an Account?</button>
+</form>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/login.js"></script>
